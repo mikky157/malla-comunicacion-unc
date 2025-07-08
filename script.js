@@ -18,7 +18,7 @@ function init() {
 
   for (let sem in data) {
     const sec = document.createElement('div');
-    sec.innerHTML = <h2>${sem.toUpperCase()}</h2>;
+    sec.innerHTML = `<h2>${sem.toUpperCase()}</h2>`;
     cont.appendChild(sec);
 
     data[sem].forEach(ramo => {
@@ -31,7 +31,7 @@ function init() {
       div.style.margin = '5px';
       div.style.borderRadius = '5px';
       div.style.color = '#fff';
-      div.textContent = ${nombre} (${sigla});
+      div.textContent = `${nombre} (${sigla})`;
 
       cont.appendChild(div);
 
@@ -41,6 +41,6 @@ function init() {
   }
 
   const resumen = document.createElement('div');
-  resumen.innerHTML = <p><strong>Créditos USM:</strong> ${total_usm} | <strong>SCT:</strong> ${total_sct}</p>;
+  resumen.innerHTML = `<p><strong>Créditos USM:</strong> ${total_usm} | <strong>SCT:</strong> ${total_sct}</p>`;
   cont.prepend(resumen);
 }
