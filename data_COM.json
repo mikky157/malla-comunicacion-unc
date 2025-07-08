@@ -1,0 +1,72 @@
+{
+  "s1": [
+    ["Introducción a la carrera de Comunicación Social", "COM-001", 5, 7, "TEO", [], "A"],
+    ["Técnicas de Estudio y Comprensión de Textos", "COM-002", 5, 7, "HUM", [], "A"],
+    ["Historia Social Contemporánea", "COM-003", 5, 7, "HUM", ["COM-001"], "A"],
+    ["Introducción a la Comunicación Social", "COM-004", 5, 7, "TEO", ["COM-001"], "A"],
+    ["Teoría del Conocimiento y Lógica", "COM-005", 5, 7, "TEO", ["COM-001"], "A"]
+  ],
+  "s2": [
+    ["Economía y Comunicación", "COM-006", 5, 7, "TEO", [], "A"],
+    ["Psicología y Comunicación", "COM-007", 5, 7, "TEO", ["COM-004", "COM-005"], "A"],
+    ["Teorías Sociológicas", "COM-008", 5, 7, "HUM", ["COM-003", "COM-004"], "A"],
+    ["Examen de Idioma Inglés", "COM-009", 1, 2, "OPT", [], "A"]
+  ],
+  "s1_anual": [
+    ["Lenguaje I y Producción Gráfica", "COM-010", 5, 7, "TAL", ["COM-002"], "A"]
+  ],
+  "s3": [
+    ["Psicología Social", "COM-010", 5, 7, "HUM", ["COM-007", "COM-008"], "A"],
+    ["Teorías Sociológicas II", "COM-011", 5, 7, "HUM", ["COM-008"], "A"],
+    ["Informática Básica Aplicada", "COM-012", 5, 7, "TEO", ["COM-005"], "A"]
+  ],
+  "s4": [
+    ["Lingüística", "COM-013", 5, 7, "HUM", ["COM-005", "COM-009"], "A"],
+    ["Teorías de la Comunicación I", "COM-014", 5, 7, "TEO", ["COM-010", "COM-011"], "A"],
+    ["Historia Argentina Contemporánea", "COM-015", 5, 7, "HUM", ["COM-003"], "A"],
+    ["Seminario Optativo I", "COM-OPT1", 2, 3, "SEM", [], "A"]
+  ],
+  "s3_anual": [
+    ["Lenguaje II y Producción Radiofónica", "COM-016", 5, 7, "TAL", ["COM-004", "COM-009"], "A"]
+  ],
+  "s5": [
+    ["Teorías de la Comunicación II", "COM-017", 5, 7, "TEO", ["COM-014"], "A"],
+    ["Antropología Socio-Cultural", "COM-018", 5, 7, "HUM", ["COM-014"], "A"],
+    ["Movimientos Estéticos y Cultura Argentina", "COM-019", 5, 7, "HUM", ["COM-015"], "A"]
+  ],
+  "s6": [
+    ["Semiótica", "COM-020", 5, 7, "TEO", ["COM-013", "COM-017"], "A"],
+    ["Política y Comunicación", "COM-021", 5, 7, "TEO", ["COM-014"], "A"],
+    ["Taller: Metodología de la Investigación Aplicada", "COM-022", 5, 7, "MET", ["COM-017"], "A"],
+    ["Seminario Optativo II", "COM-OPT2", 2, 3, "SEM", [], "A"]
+  ],
+  "s5_anual": [
+    ["Lenguaje III y Producción Audiovisual", "COM-023", 5, 7, "TAL", ["COM-009", "COM-016"], "A"]
+  ],
+  "s7": [
+    ["Análisis Institucional I (Psicología Institucional)", "COM-025", 5, 7, "INS", [], "A"],
+    ["Análisis Institucional II (Sociología y Antropología Institucional)", "COM-026", 5, 7, "INS", [], "A"],
+    ["Análisis de la Comunicación I", "COM-031", 5, 7, "INS", [], "A"],
+    ["Relaciones Públicas", "COM-032", 5, 7, "INS", [], "A"]
+  ],
+  "s8": [
+    ["Seminario: Sectores Institucionales", "COM-029", 5, 7, "INS", [], "A"],
+    ["Taller Opcional: Teoría y Técnicas de Grupo", "COM-030A", 5, 7, "INS", [], "A"],
+    ["Taller Opcional: Imagen Institucional", "COM-030B", 5, 7, "INS", [], "A"]
+  ],
+  "s7_anual": [
+    ["Taller de Medios de Comunicación Institucional", "COM-027", 5, 7, "INS", [], "A"],
+    ["Comunicación Institucional", "COM-028", 5, 7, "INS", [], "A"]
+  ],
+  "s9": [
+    ["Epistemología de las Ciencias Sociales", "COM-033", 5, 7, "TEO", [], "A"],
+    ["Análisis de la Comunicación II", "COM-034", 5, 7, "INS", [], "A"],
+    ["Optativa I", "COM-035", 3, 5, "OPT", [], "A"],
+    ["Optativa II", "COM-036", 3, 5, "OPT", [], "A"]
+  ],
+  "s10": [
+    ["Optativa III", "COM-037", 3, 5, "OPT", [], "A"],
+    ["Seminario Trabajo Final", "COM-038", 5, 7, "SEM", [], "A"],
+    ["Examen de Idioma Francés, Italiano o Alemán", "COM-039", 1, 2, "OPT", [], "A"]
+  ]
+}
