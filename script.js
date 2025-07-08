@@ -18,8 +18,9 @@ function init() {
 
   for (let sem in data) {
     const sec = document.createElement('div');
-    sec.innerHTML = `<h2>${sem.toUpperCase()}</h2>`;
-    cont.appendChild(sec);
+    const titulo = document.createElement('h2');
+    titulo.textContent = sem.toUpperCase();
+    sec.appendChild(titulo);
 
     data[sem].forEach(ramo => {
       const [nombre, sigla, usm, sct, cat, pre] = ramo;
@@ -31,13 +32,35 @@ function init() {
       div.style.margin = '5px';
       div.style.borderRadius = '5px';
       div.style.color = '#fff';
+      div.style.cursor = 'pointer';
       div.textContent = `${nombre} (${sigla})`;
+
+      // Función para marcar como aprobada al hacer clic
+      if (aprobadas.includes(sigla)) {
+        div.style.textDecoration = 'line-through';
+        div.style.opacity = '0.5';
+      }
+
+      div.addEventListener('click', () => {
+        if (aprobadas.includes(sigla)) {
+          aprobadas = aprobadas.filter(c => c !== sigla);
+          div.style.textDecoration = 'none';
+          div.style.opacity = '1';
+        } else {
+          aprobadas.push(sigla);
+          div.style.textDecoration = 'line-through';
+          div.style.opacity = '0.5';
+        }
+        localStorage.setItem('aprobadas', JSON.stringify(aprobadas));
+      });
 
       cont.appendChild(div);
 
       total_usm += usm;
       total_sct += sct;
     });
+
+    cont.appendChild(sec);
   }
 
   const resumen = document.createElement('div');
