@@ -1,0 +1,30 @@
+:root {
+  --bg: #f0f0f0;
+  --text: #333;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --text: #ddd;
+  }
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 20px;
+}
+#resumen {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.cuadro {
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.cuadro.desbloqueado { opacity: 1; }
+.cuadro.bloqueado { opacity: 0.4; cursor: not-allowed; }
