@@ -1,0 +1,9 @@
+{
+  "TEO": ["#1565C0", "Teóricas"],
+  "HUM": ["#8E24AA", "Humanísticas"],
+  "TAL": ["#EF6C00", "Talleres"],
+  "INS": ["#2E7D32", "Institucionales"],
+  "SEM": ["#D81B60", "Seminarios"],
+  "OPT": ["#6D4C41", "Optativas"],
+  "MET": ["#00897B", "Metodología"]
+}
