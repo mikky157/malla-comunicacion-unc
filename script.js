@@ -18,6 +18,10 @@ function init(){
     data[sem].forEach(ramo => {
       const [nombre,sigla,usm,sct,cat,pre] = ramo;
       const color = colors[cat]?.[0] || '#999';
+      // Aquí seguiría el resto del código...
+    });
+  }
+}
       const el = document.createElement('div');
       el.textContent = ${sigla}: ${nombre};
       el.className = 'cuadro';
