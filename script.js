@@ -1,22 +1,27 @@
-let data, colors;
+let data = null;
+let colors = null;
 let aprobadas = JSON.parse(localStorage.getItem('aprobadas')) || [];
 
-fetch('data_COM.json').then(r => r.json()).then(d => {
+// Cargar archivos JSON y luego inicializar
+Promise.all([
+  fetch('data_COM.json').then(r => r.json()),
+  fetch('colors_COM.json').then(r => r.json())
+]).then(([d, c]) => {
   data = d;
-  init();
-});
-fetch('colors_COM.json').then(r => r.json()).then(c => {
   colors = c;
   init();
 });
 
 function init() {
   if (!data || !colors) return;
+
   const cont = document.getElementById('malla');
   cont.innerHTML = '';
-  let total_usm = 0, total_sct = 0;
 
-  for (let sem in data) {
+  let total_usm = 0;
+  let total_sct = 0;
+
+  for (const sem in data) {
     const sec = document.createElement('div');
     const titulo = document.createElement('h2');
     titulo.textContent = sem.toUpperCase();
@@ -33,16 +38,17 @@ function init() {
       div.style.borderRadius = '5px';
       div.style.color = '#fff';
       div.style.cursor = 'pointer';
-      div.textContent = ${nombre} (${sigla});
+      div.textContent = `${nombre} (${sigla})`;
 
-      // Marcar si ya estaba aprobada
       if (aprobadas.includes(sigla)) {
         div.style.textDecoration = 'line-through';
         div.style.opacity = '0.5';
       }
 
       div.addEventListener('click', () => {
-        if (aprobadas.includes(sigla)) {
+        const aprobada = aprobadas.includes(sigla);
+
+        if (aprobada) {
           aprobadas = aprobadas.filter(c => c !== sigla);
           div.style.textDecoration = 'none';
           div.style.opacity = '1';
@@ -51,18 +57,22 @@ function init() {
           div.style.textDecoration = 'line-through';
           div.style.opacity = '0.5';
         }
+
         localStorage.setItem('aprobadas', JSON.stringify(aprobadas));
       });
 
-      sec.appendChild(div); // 🔁 Esta línea estaba mal antes
+      sec.appendChild(div);
       total_usm += usm;
       total_sct += sct;
     });
 
-    cont.appendChild(sec); // Agrega toda la sección después de completarla
+    cont.appendChild(sec);
   }
 
   const resumen = document.createElement('div');
-  resumen.innerHTML = <p><strong>Créditos USM:</strong> ${total_usm} | <strong>SCT:</strong> ${total_sct}</p>;
+  resumen.innerHTML = `
+    <p><strong>Créditos USM:</strong> ${total_usm} |
+    <strong>SCT:</strong> ${total_sct}</p>
+  `;
   cont.prepend(resumen);
 }
