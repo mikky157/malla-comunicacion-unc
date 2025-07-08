@@ -33,9 +33,9 @@ function init() {
       div.style.borderRadius = '5px';
       div.style.color = '#fff';
       div.style.cursor = 'pointer';
-      div.textContent = `${nombre} (${sigla})`;
+      div.textContent = ${nombre} (${sigla});
 
-      // Función para marcar como aprobada al hacer clic
+      // Marcar si ya estaba aprobada
       if (aprobadas.includes(sigla)) {
         div.style.textDecoration = 'line-through';
         div.style.opacity = '0.5';
@@ -54,16 +54,15 @@ function init() {
         localStorage.setItem('aprobadas', JSON.stringify(aprobadas));
       });
 
-      cont.appendChild(div);
-
+      sec.appendChild(div); // 🔁 Esta línea estaba mal antes
       total_usm += usm;
       total_sct += sct;
     });
 
-    cont.appendChild(sec);
+    cont.appendChild(sec); // Agrega toda la sección después de completarla
   }
 
   const resumen = document.createElement('div');
-  resumen.innerHTML = `<p><strong>Créditos USM:</strong> ${total_usm} | <strong>SCT:</strong> ${total_sct}</p>`;
+  resumen.innerHTML = <p><strong>Créditos USM:</strong> ${total_usm} | <strong>SCT:</strong> ${total_sct}</p>;
   cont.prepend(resumen);
 }
